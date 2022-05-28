@@ -21,7 +21,7 @@ export default function Header() {
             <Link to={"/session"}>Сеанс</Link>
             <Link to={"/session"}>Бронирование зала</Link>
             <Link to={"/session"}>О нас</Link>
-            <Link to={"/session"}>Залупа</Link>
+            <Link to={"/session"}>Залуп1а</Link>
           </div>
         </div>
 
