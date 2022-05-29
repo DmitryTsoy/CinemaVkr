@@ -1,8 +1,7 @@
-import React from "react";
 import { useNavigate } from 'react-router-dom';
 import { Link, Location, unstable_HistoryRouter, useLocation } from "react-router-dom";
-import Button from '@mui/material/Button';
 import './Header.scss'
+import { UserButtonTwo, UserButton } from "../Buttons/HeaderButtons";
 
 export default function Header() {
 
@@ -13,28 +12,28 @@ export default function Header() {
       <div className="header__container">
 
         <div className="header__logo">
-          <Link to={"/"}><h1>Cinema</h1></Link>
+          <p>Cinema</p>
         </div>
         <div className="header__menu">
-          <div className="header__elem">
-            <Link to={"/"}>Главная</Link>
-            <Link to={"/session"}>Сеанс</Link>
-            <Link to={"/session"}>Бронирование зала</Link>
-            <Link to={"/session"}>О нас</Link>
-            <Link to={"/session"}>Залуп1а</Link>
-          </div>
+          <Link to={"/"}>
+            Element
+          </Link>
+          <Link to={"/"}>
+            Element
+          </Link>
+          <Link to={"/"}>
+            Element
+          </Link>
+          <Link to={"/"}>
+            Element
+          </Link>
         </div>
-
-        <div className="header__botton"><Button variant="text">Text</Button></div>
-
-
-
-
-
-
-
-
-
+        <div className="header__user">
+          
+          <UserButtonTwo variant="text">
+            Вход
+          </UserButtonTwo>
+        </div>
       </div>
     </header>
   )
