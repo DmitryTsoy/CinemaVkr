@@ -26,7 +26,8 @@ export default class SliderClass {
         console.log(this.step)
         console.log(this.nowMargin)
         console.log("containerWidth>" + containerWidth)
-        
+        console.log("sliderWidth>" + sliderWidth)
+
         
         console.groupEnd()
 
