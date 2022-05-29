@@ -5,6 +5,7 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { SliderArrow } from "../Buttons/SliderArrow";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import SliderClass from "../../utils/SliderClass";
 
 type TSliderProps = {
     type: string,
@@ -14,6 +15,7 @@ type TSliderProps = {
 
 export default function Slider(props: TSliderProps) {
     const { type, name, id } = props;
+    const slider = new SliderClass(id, "slider", 355);
 
 
     return (
@@ -24,9 +26,9 @@ export default function Slider(props: TSliderProps) {
                     <Link to={""}>Увидеть больше <ArrowRightIcon sx={{ width: "30px", height: "auto" }} /></Link>
                 </div>
                 <div className="slider__content">
-                    <SliderArrow><ArrowBackIosNewIcon /></SliderArrow>
-                    <div className="slider__content-containerSlider">
-                        <div className="slider__content-flexLine">
+                    <SliderArrow onClick={e => { slider.slideLeft() }}><ArrowBackIosNewIcon /></SliderArrow>
+                    <div id="slider" className="slider__content-containerSlider">
+                        <div id={id} className="slider__content-flexLine">
                             <SliderElement />
                             <SliderElement />
                             <SliderElement />
@@ -35,13 +37,10 @@ export default function Slider(props: TSliderProps) {
                             <SliderElement />
                             <SliderElement />
                             <SliderElement />
-
                             <SliderElement />
-
-
                         </div>
                     </div>
-                    <SliderArrow><ArrowForwardIosIcon /></SliderArrow>
+                    <SliderArrow onClick={e => slider.slideRight()}><ArrowForwardIosIcon /></SliderArrow>
                 </div>
             </div>
         </div>)
