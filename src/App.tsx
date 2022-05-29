@@ -7,7 +7,7 @@ import Header from './components/Header/Header'
 import { About } from './pages/About/About';
 import { Home } from './pages/Home/Home';
 import { Provider, useDispatch } from "react-redux";
-import { setMovieList } from "./redux/actions/movieListActions"
+import { setMovieList, setMovieMain } from "./redux/actions/movieListActions"
 
 function App() {
 
@@ -16,6 +16,8 @@ function App() {
   useEffect(() => {
 
     dispatch(setMovieList())
+    dispatch(setMovieMain())
+
 
   }, [])
 

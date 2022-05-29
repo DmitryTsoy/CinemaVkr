@@ -1,14 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { movieDataType } from "../../data/movieData";
-import { setMovieList } from "../actions/movieListActions";
+import { movieDataType, movieDataTypeElement } from "../../data/movieData";
+import { setMovieList, setMovieMain } from "../actions/movieListActions";
 
 
 export interface IMovieList {
-  movieList: movieDataType
+  movieList: movieDataType,
+  movieMain: movieDataTypeElement | null,
 }
 
 const initialState: IMovieList = {
-  movieList: []
+  movieList: [],
+  movieMain: null,
 }
 
 const sliceMovieList = "movieList";
@@ -27,6 +29,11 @@ const movieListSlice = createSlice({
     builder.addCase(setMovieList.fulfilled, (state, action) => {
 
       state.movieList = action.payload;
+
+    })
+    builder.addCase(setMovieMain.fulfilled, (state, action) => {
+
+      state.movieMain = action.payload;
 
     })
 
