@@ -13,8 +13,9 @@ export type movieDataTypeElement = {
   genres: string[],
   direction: string,
   trailer: string,
-  countries: string[],
+  country: string,
   raiting: string,
+  type: string,
 }
 
 export type movieDataType =
@@ -27,15 +28,16 @@ export const movieMain: movieDataTypeElement =
   originalTitle: "John Wick 3 : Parabellum",
   discription: "Лучший в мире наемный убийца Джон Уик приговорен к смертной казни самими же киллерами за нарушение законов преступной гильдии. Но сотням наемников не по зубам один гений изящного искусства убивать.",
   background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653824464/Cinima/vVpEOvdxVBP2aV166j5Xlvb5Cdc_jin9zg.jpg",
-  poster: "",
+  poster: "https://image.tmdb.org/t/p/original/9zbl69Zl5E7nZ7O3eX81UVqDfY9.jpg",
   date: "",
   time: "",
   actorsList: [],
   genres: [],
   direction: "",
   trailer: "",
-  countries: [],
+  country: "USA",
   raiting: "8.3",
+  type: "Сейчас в  кино",
 }
 
 export const movieData: movieDataType =
@@ -45,15 +47,20 @@ export const movieData: movieDataType =
       originalTitle: "John Wick 3 : Parabellum",
       discription: "Лучший в мире наемный убийца Джон Уик приговорен к смертной казни самими же киллерами за нарушение законов преступной гильдии. Но сотням наемников не по зубам один гений изящного искусства убивать.",
       background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653824464/Cinima/vVpEOvdxVBP2aV166j5Xlvb5Cdc_jin9zg.jpg",
-      poster: "",
-      date: "",
+      poster: "https://image.tmdb.org/t/p/original/9zbl69Zl5E7nZ7O3eX81UVqDfY9.jpg",
+      date: "2019",
       time: "",
       actorsList: [],
-      genres: [],
+      genres: ["one", "two", "three"],
       direction: "",
       trailer: "",
-      countries: [],
-      raiting: "",
-    }
+      country: "USA",
+      raiting: "8.3",
+      type: "Сейчас в кино",
+    },
+
+
+
+
   ]
 

@@ -19,11 +19,12 @@ export const SliderArrow = styled(Button)({
     color: "#ffffff",
     '&:hover': {
         backgroundColor: 'rgba(#ffffff, 0.5)',
-        
+
     },
     '& svg': {
-        width:"48px",
-        height:"auto"
+        color: "#6B7280",
+        width: "48px",
+        height: "auto"
     },
 
 });

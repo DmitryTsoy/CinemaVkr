@@ -6,6 +6,8 @@ import { SliderArrow } from "../Buttons/SliderArrow";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import SliderClass from "../../utils/SliderClass";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store/store";
 
 type TSliderProps = {
     type: string,
@@ -16,7 +18,7 @@ type TSliderProps = {
 export default function Slider(props: TSliderProps) {
     const { type, name, id } = props;
     const slider = new SliderClass(id, "slider", 355);
-
+    const movieList = useSelector((state: RootState) => state.movieList.movieList);
 
     return (
         <div className="slider" >
@@ -29,15 +31,13 @@ export default function Slider(props: TSliderProps) {
                     <SliderArrow onClick={e => { slider.slideLeft() }}><ArrowBackIosNewIcon /></SliderArrow>
                     <div id="slider" className="slider__content-containerSlider">
                         <div id={id} className="slider__content-flexLine">
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
-                            <SliderElement />
+
+                            {movieList.map((elem) => {
+
+                                if (elem.type === type)
+                                    return (<SliderElement key={elem.title} element={elem} />)
+
+                            })}
                         </div>
                     </div>
                     <SliderArrow onClick={e => slider.slideRight()}><ArrowForwardIosIcon /></SliderArrow>

@@ -19,8 +19,10 @@ const Home = () => {
         ?
         <div className="home">
           <MainFilm />
-          <Slider type="any" name="Сейчас в кино" id = {"NowInTheater"} />
-
+        
+          <Slider type="Сейчас в кино" name="Сейчас в кино" id = {"NowInTheater"} />
+        
+        
         </div>
         :
         <></>}
