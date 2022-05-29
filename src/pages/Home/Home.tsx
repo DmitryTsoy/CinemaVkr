@@ -4,8 +4,10 @@ import Button from '@mui/material/Button';
 import './Home.scss'
 import MainFilm from "../../components/MainFilm/MainFilm";
 import Loader from "../../components/Loader/Loader";
+import Slider from "../../components/Slider/Slider";
 
 const Home = () => {
+  
   const movieList = useSelector((state: RootState) => state.movieList.movieList);
   const movieMain = useSelector((state: RootState) => state.movieList.movieMain);
 
@@ -17,6 +19,8 @@ const Home = () => {
         ?
         <div className="home">
           <MainFilm />
+          <Slider type="any" name="Сейчас в кино" id = {"NowInTheater"} />
+
         </div>
         :
         <></>}

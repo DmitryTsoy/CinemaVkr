@@ -17,10 +17,6 @@ export type movieDataTypeElement = {
   raiting: string,
 }
 
-
-
-
-
 export type movieDataType =
   movieDataTypeElement[];
 
@@ -30,7 +26,7 @@ export const movieMain: movieDataTypeElement =
   title: "Джон Уик 3",
   originalTitle: "John Wick 3 : Parabellum",
   discription: "Лучший в мире наемный убийца Джон Уик приговорен к смертной казни самими же киллерами за нарушение законов преступной гильдии. Но сотням наемников не по зубам один гений изящного искусства убивать.",
-  background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653772880/Cinima/stretched-1920-1080-1012576_evbu93.jpg",
+  background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653824464/Cinima/vVpEOvdxVBP2aV166j5Xlvb5Cdc_jin9zg.jpg",
   poster: "",
   date: "",
   time: "",
@@ -39,7 +35,7 @@ export const movieMain: movieDataTypeElement =
   direction: "",
   trailer: "",
   countries: [],
-  raiting: "",
+  raiting: "8.3",
 }
 
 export const movieData: movieDataType =
@@ -48,7 +44,7 @@ export const movieData: movieDataType =
       title: "Джон Уик 3",
       originalTitle: "John Wick 3 : Parabellum",
       discription: "Лучший в мире наемный убийца Джон Уик приговорен к смертной казни самими же киллерами за нарушение законов преступной гильдии. Но сотням наемников не по зубам один гений изящного искусства убивать.",
-      background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653772880/Cinima/stretched-1920-1080-1012576_evbu93.jpg",
+      background: "https://res.cloudinary.com/dhp6tpvfl/image/upload/v1653824464/Cinima/vVpEOvdxVBP2aV166j5Xlvb5Cdc_jin9zg.jpg",
       poster: "",
       date: "",
       time: "",

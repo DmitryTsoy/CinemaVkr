@@ -1,0 +1,104 @@
+.slider {
+    width: 100%;
+    background-color: #000000;
+    &__container {
+        padding-top: 25px;
+        width: 1800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+    }
+    &__name {
+        margin: 0 auto;
+        width: 1600px;
+        display: flex;
+        justify-content: space-between;
+        & p {
+            color: #ffffff;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 47px;
+        }
+        & a {
+            display: flex;
+            align-items: center;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 24px;
+            color: #be123c;
+        }
+    }
+    &__content {
+        margin-top: 45px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+
+        &-containerSlider {
+            overflow: hidden;
+
+            //padding-left: 1px;
+        }
+        &-flexLine {
+            width: 100%;
+            margin-left: 1px;
+            display: flex;
+            gap: 105px;
+        }
+        &-element {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            & img {
+                width: 250px;
+            }
+        }
+        &-country {
+            & p {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+                color: #9ca3af;
+            }
+        }
+        &-name {
+            & p {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 23px;
+                color: #ffffff;
+            }
+        }
+        &-raiting {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            & p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 12px;
+                color: #ffffff;
+            }
+        }
+        &-genres {
+            & p {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+                /* identical to box height */
+
+                /* gray/400 */
+
+                color: #9ca3af;
+            }
+        }
+    }
+}
