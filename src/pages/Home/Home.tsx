@@ -21,7 +21,7 @@ const Home = () => {
           <MainFilm />
         
           <Slider type="Сейчас в кино" name="Сейчас в кино" id = {"NowInTheater"} />
-        
+          <Slider type="Скоро в кино" name="Скоро в кино" id = {"SoonInTheater"} />
         
         </div>
         :

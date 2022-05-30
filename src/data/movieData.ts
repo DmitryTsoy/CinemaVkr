@@ -138,7 +138,24 @@ export const movieData: movieDataType =
       trailer: "",
       country: "USA",
       raiting: "8",
-      type: "Сейчас в кино",
+      type: "Скоро в кино",
+    },
+
+    {
+      title: "Темный рыцарь",
+      originalTitle: "The Dark Knight",
+      discription: "У Бэтмена появляется новый враг — философ-террорист Джокер. Кинокомикс, который вывел жанр на новый уровень",
+      background: "",
+      poster: "https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      date: "2008",
+      time: "152",
+      actorsList: [],
+      genres: ["one", "two", "three"],
+      direction: "",
+      trailer: "",
+      country: "USA",
+      raiting: "8,5",
+      type: "Скоро в кино",
     },
 
  
