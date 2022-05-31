@@ -8,6 +8,7 @@ import { About } from './pages/About/About';
 import { Home } from './pages/Home/Home';
 import { Provider, useDispatch } from "react-redux";
 import { setMovieList, setMovieMain } from "./redux/actions/movieListActions"
+import MoviePage from './pages/Movie/MoviePage';
 
 function App() {
 
@@ -30,9 +31,8 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-
-
+        <Route path='/movie/:title' element={<MoviePage />} />
+        
       </Routes>
 
 

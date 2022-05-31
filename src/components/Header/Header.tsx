@@ -12,7 +12,7 @@ export default function Header() {
       <div className="header__container">
 
         <div className="header__logo">
-          <p>Cinema</p>
+          <Link to={"/"}>Cinema</Link>
         </div>
         <div className="header__menu">
           <Link to={"/"}>
@@ -29,7 +29,7 @@ export default function Header() {
           </Link>
         </div>
         <div className="header__user">
-          
+
           <UserButtonTwo variant="text">
             Вход
           </UserButtonTwo>

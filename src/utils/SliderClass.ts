@@ -19,18 +19,16 @@ export default class SliderClass {
         const sliderWidth = document.getElementById(this.sliderName)?.offsetWidth;
 
 
-
-        console.group()
-        console.log(this.sliderName)
-        console.log(this.containerName)
-        console.log(this.step)
-        console.log(this.nowMargin)
-        console.log("containerWidth>" + containerWidth)
-        console.log("sliderWidth>" + sliderWidth)
-
-        
-        console.groupEnd()
-
+        /*
+                console.group()
+                console.log(this.sliderName)
+                console.log(this.containerName)
+                console.log(this.step)
+                console.log(this.nowMargin)
+                console.log("containerWidth>" + containerWidth)
+                console.log("sliderWidth>" + sliderWidth)
+                console.groupEnd()
+        */
 
 
 

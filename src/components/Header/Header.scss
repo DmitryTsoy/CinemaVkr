@@ -1,5 +1,6 @@
 .header {
   width: 100%;
+  position: absolute;
   &__container {
     margin: 0 100px 0 100px;
     height: 80px;
@@ -10,7 +11,7 @@
   }
 
   &__logo {
-    & p {
+    & a {
       color: #ffffff;
 
       font-style: normal;

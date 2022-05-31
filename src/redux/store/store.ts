@@ -1,4 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { activeMovieSlice } from "../reducers/activeMovie";
 import movieListSlice from "../reducers/movieListReducer";
 
 
@@ -6,6 +7,7 @@ import movieListSlice from "../reducers/movieListReducer";
 
 const reducers = {
   movieList: movieListSlice.reducer,
+  activeMovie: activeMovieSlice.reducer,
 };
 
 

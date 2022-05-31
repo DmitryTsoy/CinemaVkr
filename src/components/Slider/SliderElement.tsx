@@ -1,4 +1,5 @@
 import LocalActivityIcon from '@mui/icons-material/LocalActivity';
+import { Link } from 'react-router-dom';
 import { movieDataType, movieDataTypeElement } from '../../data/movieData';
 
 
@@ -13,7 +14,7 @@ export default function SliderElement(props: { element: movieDataTypeElement }) 
                 <p>{element.country}, {element.date} </p>
             </div>
             <div className="slider__content-name">
-                <p> {element.title}</p>
+                <Link to={"/movie/" + element.title}> {element.title}</Link>
             </div>
             <div className="slider__content-raiting">
                 <LocalActivityIcon sx={{ width: "30px", height: "auto", color: "#FFFF00" }} />
