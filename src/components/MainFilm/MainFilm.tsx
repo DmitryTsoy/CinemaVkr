@@ -4,6 +4,7 @@ import { GoToFilmBig } from "../Buttons/GoToFilmBig";
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store/store";
+import { Link } from "react-router-dom";
 
 
 
@@ -36,8 +37,8 @@ export default function () {
                         {movieMain?.discription}
                     </p>
                 </div>
-                <GoToFilmBig><PlayArrowIcon />Купить билет</GoToFilmBig>
-
+                
+                <Link to={"/movie/" + movieMain?.title}><GoToFilmBig><PlayArrowIcon />Купить билет</GoToFilmBig></Link>
 
             </div>
         </div>)

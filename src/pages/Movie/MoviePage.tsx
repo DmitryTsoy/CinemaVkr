@@ -19,7 +19,7 @@ export default function MoviePage() {
         dispatch(setActiveMovie({ movieList: movieList, title: title }))
 
 
-    }, [])
+    }, [movieList])
 
     return (
 

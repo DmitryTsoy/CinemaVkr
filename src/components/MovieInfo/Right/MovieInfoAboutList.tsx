@@ -50,7 +50,7 @@ export default function MovieInfoAboutElement(props: MainInfoProps) {
                     <p>Бюджет</p>
                 </div>
                 <div className="info__about-param">
-                    <p>денег нет, но в держитеcь</p>
+                    <p>{activeMovie.budget}</p>
                 </div>
             </div>
             <div className="info__about-element">
