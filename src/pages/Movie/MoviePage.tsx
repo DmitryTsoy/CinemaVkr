@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import MovieInfo from "../../components/MovieInfo/MovieInfo"
 import { setActiveMovie } from "../../redux/reducers/activeMovie";
 import { RootState } from "../../redux/store/store";
+import ErrorPage from "../Error/ErrorPage";
 import "./MoviePage.scss"
 
 export default function MoviePage() {
@@ -30,7 +31,7 @@ export default function MoviePage() {
                     <MovieInfo activeMovie={activeMovie} />
                 </div>
                 :
-                <>404</>
+                <ErrorPage />
             }
         </>
     )

@@ -6,13 +6,16 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header'
 import { About } from './pages/About/About';
 import { Home } from './pages/Home/Home';
-import { Provider, useDispatch } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { setMovieList, setMovieMain } from "./redux/actions/movieListActions"
 import MoviePage from './pages/Movie/MoviePage';
+import { RootState } from './redux/store/store';
+import LoaderPage from './pages/Loader/LoaderPage';
 
 function App() {
 
   const dispatch = useDispatch();
+  const movieList = useSelector((state: RootState) => state.movieList.movieList)
 
   useEffect(() => {
 
@@ -24,20 +27,20 @@ function App() {
 
   return (
     <>
-
-      <Header />
-
-
-      <Routes>
-
-        <Route path='/' element={<Home />} />
-        <Route path='/movie/:title' element={<MoviePage />} />
-        
-      </Routes>
-
-
-
+      {movieList.length
+        ?
+        <>
+          < Header />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/movie/:title' element={<MoviePage />} />
+          </Routes>
+        </>
+        :
+        <LoaderPage />
+      }
     </>
+
   );
 }
 
