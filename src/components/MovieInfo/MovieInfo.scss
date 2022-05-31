@@ -42,14 +42,23 @@
     }
 
     &__right {
-        width: 923px;
-        height: auto;
+        &-top {
+            width: 923px;
+            height: auto;
 
-        background: rgba(188, 188, 188, 0.19);
-        padding: 4px 22px 22px 13px;
+            background: rgba(188, 188, 188, 0.19);
+            padding: 4px 22px 22px 13px;
 
-        display: flex;
-        justify-content: space-between;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-bot{
+
+            width: 958px;
+            height: auto;
+            margin-top: 26px;
+        }
     }
 
     &__title {

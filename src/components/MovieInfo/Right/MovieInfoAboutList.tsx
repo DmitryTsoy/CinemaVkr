@@ -34,7 +34,7 @@ export default function MovieInfoAboutElement(props: MainInfoProps) {
                     <p>Жанр</p>
                 </div>
                 <div className="info__about-param">
-                    <p>{activeMovie.genres.map((e) => (<>{e+" " }</>))}</p>
+                    <p>{activeMovie.genres.map((e) => (<span key={e}>{e + " "}</span>))}</p>
                 </div>
             </div>
             <div className="info__about-element">
