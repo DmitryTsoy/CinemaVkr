@@ -18,7 +18,7 @@ export default function MovieInfoRight(props: MainInfoProps) {
                 <MovieInfoSub activeMovie={activeMovie} />
             </div>
             <div className="info__right-bot">
-                <TimeList />
+                <TimeList  title={activeMovie.title}/>
             </div>
         </div>
 

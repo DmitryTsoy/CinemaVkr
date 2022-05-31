@@ -11,6 +11,7 @@ import { setMovieList, setMovieMain } from "./redux/actions/movieListActions"
 import MoviePage from './pages/Movie/MoviePage';
 import { RootState } from './redux/store/store';
 import LoaderPage from './pages/Loader/LoaderPage';
+import { setSessionList } from './redux/actions/sessionListActions';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
 
     dispatch(setMovieList())
     dispatch(setMovieMain())
+    dispatch(setSessionList())
 
 
   }, [])
