@@ -9,8 +9,10 @@
 a {
     text-decoration: none;
 }
-body{
+
+body {
+    height: auto; /* Высота */
 
     min-width: 1450px;
- 
+    background-color: black;
 }

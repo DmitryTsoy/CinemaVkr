@@ -45,4 +45,3 @@ export default function Slider(props: TSliderProps) {
             </div>
         </div>)
 }
-

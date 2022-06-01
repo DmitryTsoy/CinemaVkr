@@ -14,6 +14,7 @@ import LoaderPage from './pages/Loader/LoaderPage';
 import { setSessionList } from './redux/actions/sessionListActions';
 import SessionsPage from './pages/SessionsPage/SessionsPage';
 import ErrorPage from './pages/Error/ErrorPage';
+import SessionWindow from './pages/SessonWindow/SessionWindow';
 
 function App() {
 
@@ -34,13 +35,13 @@ function App() {
       {movieList.length
         ?
         <>
-          < Header />
+          <Header />
+          <SessionWindow />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/movie/:title' element={<MoviePage />} />
             <Route path='/sessions' element={<SessionsPage />} />
             <Route path='*' element={<ErrorPage />} />
-
           </Routes>
         </>
         :

@@ -1,0 +1,14 @@
+.sessionWindow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__container {
+        width: 1199px;
+        height: 633px;
+    }
+}

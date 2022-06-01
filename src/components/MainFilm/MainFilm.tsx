@@ -37,9 +37,7 @@ export default function () {
                         {movieMain?.discription}
                     </p>
                 </div>
-                
                 <Link to={"/movie/" + movieMain?.title}><GoToFilmBig><PlayArrowIcon />Купить билет</GoToFilmBig></Link>
-
             </div>
         </div>)
 }
