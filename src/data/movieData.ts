@@ -39,7 +39,7 @@ export const movieMain: movieDataTypeElement =
   budget: "",
   country: "USA",
   raiting: "8.3",
-  type: "Сейчас в  кино",
+  type: "Сейчас в кино",
 }
 
 export const movieData: movieDataType =

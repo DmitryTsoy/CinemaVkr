@@ -1,0 +1,70 @@
+.sessionsList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+
+    &__element {
+        width: 100%;
+        display: flex;
+        //justify-content: space-between;
+        & img {
+            width: 300px;
+            height: auto;
+        }
+    }
+
+    &__info {
+        width: calc(100% - 300px);
+        padding: 11px 0 0 21px;
+    }
+    &__name {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        &-normal {
+            & a {
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 49px;
+
+                color: #ffffff;
+            }
+        }
+        &-original {
+            margin-top: 2px;
+            & a {
+                font-size: 20px;
+                line-height: 24px;
+
+                color: #ababab;
+            }
+        }
+    }
+
+    &__rait {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        & p {
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 39px;
+
+            color: #be123c;
+        }
+    }
+
+    &__sessions {
+        & p {
+            margin: 22px 0 34px 0;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #ffffff;
+        }
+    }
+}

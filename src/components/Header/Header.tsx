@@ -15,8 +15,8 @@ export default function Header() {
           <Link to={"/"}>Cinema</Link>
         </div>
         <div className="header__menu">
-          <Link to={"/"}>
-            Element
+          <Link to={"/sessions"}>
+            Сеансы
           </Link>
           <Link to={"/"}>
             Element

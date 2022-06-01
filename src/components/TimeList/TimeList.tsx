@@ -16,7 +16,7 @@ export default function TimeList(props: { title: string }) {
                 <div className="time">
                     {sessionList?.map((elem) => {
                         if (elem.filmName === title)
-                            return (<TimeListElement element={elem} />)
+                            return (<TimeListElement key={elem.sessionName} element={elem} />)
                     })}
                 </div>
                 :

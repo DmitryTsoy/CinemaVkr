@@ -12,6 +12,8 @@ import MoviePage from './pages/Movie/MoviePage';
 import { RootState } from './redux/store/store';
 import LoaderPage from './pages/Loader/LoaderPage';
 import { setSessionList } from './redux/actions/sessionListActions';
+import SessionsPage from './pages/SessionsPage/SessionsPage';
+import ErrorPage from './pages/Error/ErrorPage';
 
 function App() {
 
@@ -36,6 +38,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/movie/:title' element={<MoviePage />} />
+            <Route path='/sessions' element={<SessionsPage />} />
+            <Route path='*' element={<ErrorPage />} />
+
           </Routes>
         </>
         :
