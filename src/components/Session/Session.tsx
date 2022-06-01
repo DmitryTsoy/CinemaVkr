@@ -1,11 +1,23 @@
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store/store";
 import { BuyButton } from "../Buttons/BuyButton"
 import "./Session.scss"
+import SessionLine from "./SessionLine";
 
 export default function Session() {
 
     const session = useSelector((state: RootState) => state.session.session);
+    const rowArray = useSelector((state: RootState) => state.session.rowArray);
+
+
+
+    useEffect(() => {
+
+
+
+    }, [])
+
 
 
     return (
@@ -29,11 +41,7 @@ export default function Session() {
 
                             <div className="oneSession__array-row">
                                 <div className="oneSession__array-rows">
-                                    <p>1</p>
-                                    <p>2</p>
-                                    <p>3</p>
-                                    <p>4</p>
-                                    <p>5</p>
+                                    {rowArray.map(e => { return (<p key={e}>{e}</p>) })}
                                 </div>
                             </div>
 
@@ -42,57 +50,11 @@ export default function Session() {
                             </div>
 
                             <div className="oneSession__array-places">
+                                {rowArray.map(e => {
 
-                                <div className="oneSession__array-line">
-                                    <div className="oneSession__array-element oneSession__array-element--busy"></div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">2</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">3</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">4</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">5</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">6</div>
-                                </div>
+                                    return (<SessionLine row={e} key={"row" + e} />)
 
-
-
-
-                                <div className="oneSession__array-line">
-                                    <div className="oneSession__array-element oneSession__array-element--busy"></div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">2</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">3</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">4</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">5</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">6</div>
-                                </div>
-
-                                <div className="oneSession__array-line">
-                                    <div className="oneSession__array-element oneSession__array-element--busy"></div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">2</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">3</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">4</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">5</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">6</div>
-                                </div>
-
-                                <div className="oneSession__array-line">
-                                    <div className="oneSession__array-element oneSession__array-element--busy"></div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">2</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">3</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">4</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">5</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">6</div>
-                                </div>
-
-                                <div className="oneSession__array-line">
-                                    <div className="oneSession__array-element oneSession__array-element--busy"></div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">2</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">3</div>
-                                    <div className="oneSession__array-element oneSession__array-element--active">4</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">5</div>
-                                    <div className="oneSession__array-element oneSession__array-element--free">6</div>
-                                </div>
-
-
-
+                                })}
 
                             </div>
                         </div>
