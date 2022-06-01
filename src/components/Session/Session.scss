@@ -40,14 +40,112 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
+
+            &-wrapper {
+                width: 797px;
+                height: 397px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #d9d9d9;
+                margin: 22px 0 31px 0;
+            }
         }
     }
 
     &__array {
-        width: 797px;
-        height: 397px;
+        width: 500px;
+        height: auto;
+        display: grid;
+        grid-template-columns: 17px auto;
+        grid-template-rows: 10px 300px;
 
-        background: #d9d9d9;
-        margin: 22px 0 31px 0;
+        grid-template-areas:
+            "row screen"
+            "row places";
+
+        &-row {
+            grid-area: row;
+            width: 17px;
+            //background-color: aqua;
+        }
+
+        &-rows {
+            margin-top: 110px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            & p {
+                width: 17px;
+                height: 25px;
+
+                text-align: center;
+
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                color: #6b7280;
+            }
+        }
+
+        &-screen {
+            grid-area: screen;
+
+            align-self: center;
+            justify-self: center;
+
+            & div {
+                width: 432px;
+                height: 5px;
+
+                background: #00a2c6;
+            }
+        }
+
+        &-places {
+            grid-area: places;
+            //background-color: purple;
+            justify-self: center;
+            margin-top: 100px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &-line {
+            width: auto;
+            display: flex;
+            gap: 12px;
+        }
+        &-element {
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+
+            //background: #be123c;
+            font-family: "MontserratExtraLight";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 20px;
+            color: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &--busy {
+                background: #00a2c6;
+            }
+            &--free {
+                background: #6b7280;
+            }
+            &--active {
+                background: #be123c;
+            }
+        }
     }
 }
