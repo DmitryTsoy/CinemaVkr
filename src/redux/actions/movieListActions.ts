@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { movieData, movieMain } from "../../data/movieData";
+import { movieData, movieDataType, movieMain } from "../../data/movieData";
 
 
 
@@ -13,7 +13,36 @@ export const setMovieList = createAsyncThunk(
   movieListActions.SET_MOVIE_LIST,
   async function () {
 
-    return Promise.resolve(movieData);
+
+
+    let req;
+    console.log("here")
+    while (1) {
+      req = await fetch(`http://localhost/Cinema/hs/v1/allFilm`, { method: 'GET', });
+
+      if (req.ok) {
+        break;
+      }
+    }
+    if (req !== undefined) {
+
+      const data: any = await req.json();
+
+      if (Array.isArray(data))
+        data.map(elem => {
+          let str: string = elem.actorsList;
+          elem.actorsList = str.split("/");
+          elem.genres = [elem.genres];
+        })
+
+      return data;
+
+
+    }
+
+
+
+    //return Promise.resolve(movieData);
 
   }
 )
