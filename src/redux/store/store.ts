@@ -3,6 +3,7 @@ import { activeMovieSlice } from "../reducers/activeMovieSlice";
 import movieListSlice from "../reducers/movieListSlice";
 import sessionListSlice from "../reducers/sessionListSlice";
 import sessionSlice from "../reducers/sessionSlice";
+import userSlice from "../reducers/userReducer";
 
 
 
@@ -12,7 +13,7 @@ const reducers = {
   activeMovie: activeMovieSlice.reducer,
   sessionList: sessionListSlice.reducer,
   session: sessionSlice.reducer,
-
+  user: userSlice.reducer,
 };
 
 

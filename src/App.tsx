@@ -15,6 +15,7 @@ import { setSessionList } from './redux/actions/sessionListActions';
 import SessionsPage from './pages/SessionsPage/SessionsPage';
 import ErrorPage from './pages/Error/ErrorPage';
 import SessionWindow from './pages/SessonWindow/SessionWindow';
+import AuthWindow from './pages/Auth/AuthWindow';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
         <>
           <Header />
           <SessionWindow />
+          <AuthWindow />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/movie/:title' element={<MoviePage />} />

@@ -2,9 +2,17 @@ import { useNavigate } from 'react-router-dom';
 import { Link, Location, unstable_HistoryRouter, useLocation } from "react-router-dom";
 import './Header.scss'
 import { UserButtonTwo, UserButton } from "../Buttons/HeaderButtons";
+import { useDispatch } from 'react-redux';
+import { setDialog } from '../../redux/reducers/userReducer';
 
 export default function Header() {
 
+  const dispatch = useDispatch();
+
+
+  function openWindow() {
+    dispatch(setDialog({ isLoginOpen: true, isRegistrationOpen: false, isLoad: false }))
+  }
 
   return (
 
@@ -30,7 +38,7 @@ export default function Header() {
         </div>
         <div className="header__user">
 
-          <UserButtonTwo variant="text">
+          <UserButtonTwo onClick={e => openWindow()} variant="text">
             Вход
           </UserButtonTwo>
         </div>
