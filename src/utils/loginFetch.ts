@@ -10,5 +10,4 @@ export default async function loginFetch(email: string, pass: string) {
                 })
         });
     return req
-
 }

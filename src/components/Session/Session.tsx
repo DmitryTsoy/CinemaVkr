@@ -1,15 +1,20 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { bookingAction } from "../../redux/actions/sessionActions";
 import { RootState } from "../../redux/store/store";
 import { BuyButton } from "../Buttons/BuyButton"
 import "./Session.scss"
 import SessionLine from "./SessionLine";
 
 export default function Session() {
+    const booking = useSelector((state: RootState) => state.session.booking);
 
     const session = useSelector((state: RootState) => state.session.session);
     const rowArray = useSelector((state: RootState) => state.session.rowArray);
+    const userEmail = useSelector((state: RootState) => state.user.userData?.email);
+    const isAuth = useSelector((state: RootState) => state.user.isAuth);
 
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
@@ -18,6 +23,16 @@ export default function Session() {
 
     }, [])
 
+
+    function handleClick() {
+
+        if (isAuth && userEmail !== undefined && session?.sessionName !== undefined) {
+            dispatch(bookingAction({ email: userEmail, session: session?.sessionName, tickets: booking }))
+
+        }
+
+
+    }
 
 
     return (
@@ -59,7 +74,7 @@ export default function Session() {
                             </div>
                         </div>
                     </div>
-                    <BuyButton>Купить билет</BuyButton>
+                    <BuyButton onClick={e => handleClick()}>Купить билет</BuyButton>
                 </div>
 
             </div>

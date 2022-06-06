@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TSessionListElement } from "../../data/sessionList";
+import { bookingAction } from "../actions/sessionActions";
 
 
 export interface ISession {
@@ -51,7 +52,7 @@ const sessionSlice = createSlice({
 
         setDeffault: (state, action) => {
 
-            
+
             state.booking = []
 
         },
@@ -95,6 +96,20 @@ const sessionSlice = createSlice({
 
 
         },
+
+    },
+    extraReducers: (builder) => {
+
+        builder.addCase(bookingAction.fulfilled, (state, action) => {
+
+            //console.log("wsd")
+            state.booking = [];
+            state.session = null;
+            state.isOpen = false;
+            state.rowArray = [];
+            state.placesArray = [];
+
+        })
 
     }
 
