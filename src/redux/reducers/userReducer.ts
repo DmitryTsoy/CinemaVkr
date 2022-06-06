@@ -28,7 +28,7 @@ const initialState: IUserReducer = {
     isLoginOpen: false,
     isRegistrationOpen: false,
     isAuth: false,
-    isLoad: false,
+    isLoad: true,
     userData: null,
     history: null,
 }
