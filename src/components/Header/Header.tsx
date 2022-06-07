@@ -5,6 +5,8 @@ import { UserButtonTwo, UserButton } from "../Buttons/HeaderButtons";
 import { useDispatch, useSelector } from 'react-redux';
 import { setDialog } from '../../redux/reducers/userReducer';
 import { RootState } from '../../redux/store/store';
+import MenuUser from '../MenuUser/MenuUser';
+
 
 export default function Header() {
 
@@ -42,9 +44,7 @@ export default function Header() {
 
           {(isAuth && userEmail !== null)
             ?
-            <UserButtonTwo variant="text">
-              {userEmail}
-            </UserButtonTwo>
+            <MenuUser />
             :
             <UserButtonTwo onClick={e => openWindow()} variant="text">
               Вход
