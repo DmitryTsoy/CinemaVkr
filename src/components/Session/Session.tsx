@@ -10,7 +10,7 @@ import SessionLine from "./SessionLine";
 export default function Session() {
 
     const [openError, setOpenError] = useState(false);
-    
+
     const totalPrice = useSelector((state: RootState) => state.session.totalPrice);
     const booking = useSelector((state: RootState) => state.session.booking);
     const session = useSelector((state: RootState) => state.session.session);
@@ -96,7 +96,27 @@ export default function Session() {
                             </div>
                         </div>
                     </div>
-                    <BuyButton onClick={e => handleClick()}>Купить билет</BuyButton>
+                    <div className="oneSession__places-container-bot">
+                        <div className="oneSession__places-container-info">
+                            <div className="oneSession__places-container-info-elem">
+                                <div className="oneSession__array-element oneSession__array-element--free">
+                                </div>
+                                <p>Выбранные места</p>
+                            </div>
+                            <div className="oneSession__places-container-info-elem">
+                                <div className="oneSession__array-element oneSession__array-element--busy">
+                                </div>
+                                <p>Свободные места</p>
+                            </div>
+                            <div className="oneSession__places-container-info-elem">
+                                <div className="oneSession__array-element oneSession__array-element--active">
+                                </div>
+                                <p>Забронированые места</p>
+                            </div>
+                        </div>
+
+                        <BuyButton onClick={e => handleClick()}>Купить билет</BuyButton>
+                    </div>
                 </div>
 
             </div>
