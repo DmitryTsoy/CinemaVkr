@@ -1,4 +1,5 @@
-import { Alert, FormControl, Input, InputLabel, Snackbar } from "@mui/material";
+import { Alert, FormControl, Input, InputLabel, Snackbar, TextField } from "@mui/material";
+import { styled } from "@mui/system";
 import { useState, ChangeEvent } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { BuyButton } from "../../components/Buttons/BuyButton";
@@ -13,6 +14,35 @@ type State = {
     email: string,
     pass: string
 }
+
+
+const CssTextField = styled(TextField)({
+    color: "#ffffff",
+    '& label.Mui-focused': {
+        color: '#ffffff',
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: '#ffffff',
+    },
+    'label': {
+        color: '#ffffff',
+    },
+    '& .MuiOutlinedInput-root': {
+        color: "#ffffff",
+        '& shadow-root': {
+            color: '#ffffff',
+        },
+        '& fieldset': {
+            borderColor: '#ffffff',
+        },
+        '&:hover fieldset': {
+            borderColor: '#d9d9d9',
+        },
+        '&.Mui-focused fieldset': {
+            borderColor: '#d9d9d9',
+        },
+    },
+});
 
 export default function AuthWindow() {
 
@@ -78,26 +108,23 @@ export default function AuthWindow() {
                                 <p>Войти</p>
                             </div>
                             <form action="">
+                                <CssTextField
+                                    autoComplete="false"
+                                    label="email"
+                                    id="custom-css-outlined-input"
+                                    value={values.email}
+                                    onChange={handleChange('email')} />
 
-                                <FormControl variant="standard">
-                                    <InputLabel sx={{ color: "#ffffff", '&:hover': { color: "#BE123C" } }} htmlFor="email">email</InputLabel>
-                                    <Input
-                                        sx={{ color: "#ffffff", '&:hover': { color: "#BE123C" } }}
-                                        id="email"
-                                        type={'email'}
-                                        value={values.email}
-                                        onChange={handleChange('email')} />
-                                </FormControl>
-                                <FormControl variant="standard">
-                                    <InputLabel sx={{ color: "#ffffff", '&:hover': { color: "#BE123C" } }} htmlFor="password">password</InputLabel>
-                                    <Input
-                                        sx={{ color: "#ffffff", '&:hover': { color: "#BE123C" } }}
-                                        id="password"
-                                        type={'password'}
-                                        value={values.pass}
-                                        onChange={handleChange('pass')}
-                                    />
-                                </FormControl>
+                                <CssTextField
+
+                                    autoComplete="false"
+                                    type={'password'}
+                                    label="pass" id="custom-css-outlined-input"
+                                    value={values.pass}
+                                    onChange={handleChange('pass')}
+                                />
+
+
 
                             </form>
 
@@ -117,7 +144,7 @@ export default function AuthWindow() {
                     <></>
             }
             <Snackbar open={openError} autoHideDuration={6000} onClose={errorClose}>
-                <Alert onClose={errorClose}  variant="filled" severity="error" sx={{ width: '100%' }}>
+                <Alert onClose={errorClose} variant="filled" severity="error" sx={{ width: '100%' }}>
                     Ошибка авторизации
                 </Alert>
             </Snackbar>
