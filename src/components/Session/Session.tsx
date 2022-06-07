@@ -1,3 +1,4 @@
+import { Alert, Snackbar } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bookingAction } from "../../redux/actions/sessionActions";
@@ -7,8 +8,11 @@ import "./Session.scss"
 import SessionLine from "./SessionLine";
 
 export default function Session() {
-    const booking = useSelector((state: RootState) => state.session.booking);
 
+    const [openError, setOpenError] = useState(false);
+    
+    const totalPrice = useSelector((state: RootState) => state.session.totalPrice);
+    const booking = useSelector((state: RootState) => state.session.booking);
     const session = useSelector((state: RootState) => state.session.session);
     const rowArray = useSelector((state: RootState) => state.session.rowArray);
     const userEmail = useSelector((state: RootState) => state.user.userData?.email);
@@ -17,18 +21,22 @@ export default function Session() {
     const dispatch = useDispatch();
 
 
-    useEffect(() => {
-
-
-
-    }, [])
+    function errorClose() {
+        setOpenError(false);
+    };
+    function errorOpen() {
+        setOpenError(true);
+    };
 
 
     function handleClick() {
 
+        if (!isAuth) {
+            errorOpen();
+        }
+
         if (isAuth && userEmail !== undefined && session?.sessionName !== undefined) {
             dispatch(bookingAction({ email: userEmail, session: session?.sessionName, tickets: booking }))
-
         }
 
 
@@ -39,13 +47,27 @@ export default function Session() {
         <div className="oneSession">
 
             <div className="oneSession__name">
-                <div className="oneSession__title">
-                    <p>{session?.filmName}</p>
+                <div className="oneSession__name-static">
+
+                    <div className="oneSession__title">
+                        <p>{session?.filmName}</p>
+                    </div>
+                    <div className="oneSession__time">
+                        <p>{session?.sessionTime}</p>
+                    </div>
+                    <div className="oneSession__time">
+                        <p>{session?.nameHall}</p> <p>Цена билета: {session?.ticketPrice} р.</p>
+                    </div>
                 </div>
-                <div className="oneSession__time">
-                    <p>{session?.sessionTime}</p>
+                <div className="oneSession__name-dinamic">
+
+                    <div className="oneSession__time">
+                        <p>Сумма: {totalPrice} р.</p>
+                    </div>
                 </div>
+
             </div>
+
             <div className="oneSession__places">
 
 
@@ -78,6 +100,10 @@ export default function Session() {
                 </div>
 
             </div>
-
+            <Snackbar open={openError} autoHideDuration={6000} onClose={errorClose}>
+                <Alert onClose={errorClose} variant="filled" severity="error" sx={{ width: '100%' }}>
+                    Ошибка авторизации
+                </Alert>
+            </Snackbar>
         </div>)
 }

@@ -17,6 +17,7 @@ export type movieDataTypeElement = {
   raiting: string,
   budget: string,
   type: string,
+  
 }
 
 export type movieDataType =

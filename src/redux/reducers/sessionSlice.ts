@@ -12,7 +12,7 @@ export interface ISession {
         row: number;
         place: number;
     }[],
-
+    totalPrice: number,
 
 }
 
@@ -22,6 +22,7 @@ const initialState: ISession = {
     rowArray: [],
     placesArray: [],
     booking: [],
+    totalPrice: 0,
 }
 
 const sliceName = "session";
@@ -62,18 +63,15 @@ const sessionSlice = createSlice({
                 row: number;
                 place: number;
             }[] = JSON.parse(JSON.stringify(state, undefined, 2)).booking;
+            let totalPrice = JSON.parse(JSON.stringify(state, undefined, 2)).totalPrice;
+            let session = JSON.parse(JSON.stringify(state, undefined, 2)).session;
 
             const newBooking: {
                 row: number;
                 place: number;
             } = action.payload;
 
-            /*const index = booking.findIndex((e) => {
-                if (e.place === newBooking.place && e.row === newBooking.place)
-                    return true;
-            })*/
 
-            // returns 1
 
 
             let index = -1;
@@ -86,12 +84,17 @@ const sessionSlice = createSlice({
             })
 
 
-            if (index !== -1)
+            if (index !== -1) {
+                totalPrice -= session.ticketPrice;
                 booking.splice(index, 1)
+            }
             else {
+                totalPrice += session.ticketPrice;
                 booking.push(newBooking);
             }
 
+
+            state.totalPrice = totalPrice;
             state.booking = booking;
 
 
@@ -102,12 +105,12 @@ const sessionSlice = createSlice({
 
         builder.addCase(bookingAction.fulfilled, (state, action) => {
 
-            //console.log("wsd")
             state.booking = [];
             state.session = null;
             state.isOpen = false;
             state.rowArray = [];
             state.placesArray = [];
+            state.totalPrice = 0;
 
         })
 

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { sessionList } from "../../data/sessionList";
+//import { sessionList } from "../../data/sessionList";
 
 
 const sessionListActions = {

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import MovieInfo from "../../components/MovieInfo/MovieInfo"
+import Slider from "../../components/Slider/Slider";
 import { setActiveMovie } from "../../redux/reducers/activeMovieSlice";
 import { RootState } from "../../redux/store/store";
 import ErrorPage from "../Error/ErrorPage";
@@ -30,6 +31,7 @@ export default function MoviePage() {
                 <div className="movie">
                     <MovieInfo activeMovie={activeMovie} />
                 </div>
+
                 :
                 <ErrorPage />
             }

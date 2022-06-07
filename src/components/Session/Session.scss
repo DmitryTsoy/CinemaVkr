@@ -8,8 +8,15 @@
     align-items: center;
     padding-bottom: 20px;
     &__name {
+        width: 100%;
         margin-top: 16px;
         width: calc(100% - 42px);
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        &-dinamic {
+            padding-right: 185px;
+        }
     }
     &__title {
         & p {
@@ -22,6 +29,8 @@
     }
     &__time {
         margin-top: 3px;
+        display: flex;
+        gap: 13px;
         & p {
             font-style: normal;
             font-weight: 400;

@@ -1,4 +1,5 @@
 import SessionsList from "../../components/SessionsList/SessionsList"
+import Slider from "../../components/Slider/Slider"
 import "./SessionsPage.scss"
 
 
