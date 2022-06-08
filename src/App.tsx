@@ -18,6 +18,7 @@ import SessionWindow from './pages/SessonWindow/SessionWindow';
 import AuthWindow from './pages/Auth/AuthWindow';
 import { setHistory } from './redux/actions/historyActions';
 import HistoryPage from './pages/History/HistoryPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -50,6 +51,8 @@ function App() {
 
             <Route path='*' element={<ErrorPage />} />
           </Routes>
+          <Footer />
+
         </>
         :
         <LoaderPage />
