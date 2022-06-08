@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { historyData } from "../../data/historyData";
 
 
 
@@ -12,7 +13,7 @@ export const setHistory = createAsyncThunk(
     historytActions.SET_HISTORY,
     async function () {
 
-        
+        return Promise.resolve(historyData);
 
     }
 

@@ -1,0 +1,105 @@
+.historyList {
+    padding-top: 50px;
+
+    &__name {
+        & p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 40px;
+            line-height: 49px;
+
+            color: #ffffff;
+        }
+    }
+
+    &__time {
+        padding-top: 4px;
+        & p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+
+            color: #ffffff;
+        }
+    }
+    &__list {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    &__element {
+        border: 1px solid;
+        margin: 0 auto;
+        width: 675px;
+        background-color: #ffffff;
+        height: 208px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        padding: 14px 0 0 10px;
+
+        &-name {
+            & p {
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 39px;
+            }
+        }
+
+        &-time {
+            margin-top: 7px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        &-item {
+            display: flex;
+            gap: 82px;
+            margin-top: 24px;
+            & p {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+        &-price {
+            margin-top: 37px;
+            & p {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    &__control {
+        cursor: pointer;
+        border-left: 2px dashed #000000;
+        width: 120px;
+        height: 100%;
+        background: #18adce;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & p {
+            user-select: none;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+
+            color: #ffffff;
+
+            transform: rotate(90deg);
+        }
+    }
+}

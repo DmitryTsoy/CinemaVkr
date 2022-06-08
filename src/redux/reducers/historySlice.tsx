@@ -1,17 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { setHistory } from "../actions/historyActions";
+import { THistory } from "../../data/historyData";
 
 
 
-export interface IHistory {
-
-    history: any,
-
+export interface IHistorySlice {
+    history: THistory,
 }
 
 
-const initialState = {
-    movieMain: "any"
+const initialState: IHistorySlice = {
+    history: [],
 }
 
 
@@ -31,7 +30,7 @@ export const historySlice = createSlice({
 
         builder.addCase(setHistory.fulfilled, (state, action) => {
 
-            
+            state.history = action.payload;
 
         })
 

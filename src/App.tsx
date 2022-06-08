@@ -16,6 +16,8 @@ import SessionsPage from './pages/SessionsPage/SessionsPage';
 import ErrorPage from './pages/Error/ErrorPage';
 import SessionWindow from './pages/SessonWindow/SessionWindow';
 import AuthWindow from './pages/Auth/AuthWindow';
+import { setHistory } from './redux/actions/historyActions';
+import HistoryPage from './pages/History/HistoryPage';
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
     dispatch(setMovieList())
     dispatch(setMovieMain())
     dispatch(setSessionList())
+    dispatch(setHistory())
 
 
   }, [])
@@ -43,6 +46,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/movie/:title' element={<MoviePage />} />
             <Route path='/sessions' element={<SessionsPage />} />
+            <Route path='/history' element={<HistoryPage />} />
+
             <Route path='*' element={<ErrorPage />} />
           </Routes>
         </>

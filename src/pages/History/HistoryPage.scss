@@ -1,0 +1,26 @@
+.history {
+    min-height: calc(100vh - 80px);
+    padding: 80px 0 0 0;
+    background-color: black;
+
+    &__container {
+        margin: 0 auto;
+        width: 1020px;
+    }
+    &__name {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 72px;
+        & p {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 47px;
+            /* identical to box height */
+
+            color: #ffffff;
+        }
+    }
+   
+}

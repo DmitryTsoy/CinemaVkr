@@ -7,7 +7,8 @@ import { UserButtonTwo } from "../Buttons/HeaderButtons";
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import { Logout } from "@mui/icons-material";
 import HistoryIcon from '@mui/icons-material/History';
-
+import { Link } from "react-router-dom";
+import './MenuUser.scss'
 
 
 
@@ -32,7 +33,7 @@ export default function MenuUser() {
     const toggle = (open: boolean) => {
         setPropState(open);
     }
-    
+
     const handleLogout = () => {
         dispatch(logout("any"));
     };
@@ -88,10 +89,13 @@ export default function MenuUser() {
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
             <MenuItem onClick={e => toggle(true)}>
-                <ListItemIcon>
-                    <HistoryIcon fontSize="small" />
-                </ListItemIcon>
-                <p>История</p>
+                <Link className="link" to={"/history"}>
+                    <ListItemIcon>
+                        <HistoryIcon fontSize="small" />
+                    </ListItemIcon>
+                    <p>История</p>
+                </Link>
+
             </MenuItem>
             <Divider />
             <MenuItem onClick={e => handleLogout()}>
