@@ -30,15 +30,13 @@ export default function Header() {
           <Link to={"/sessions"}>
             Сеансы
           </Link>
-          <Link to={"/"}>
-            Element
+          <Link to={"/soon"}>
+            Скоро
           </Link>
           <Link to={"/"}>
-            Element
+            О нас
           </Link>
-          <Link to={"/"}>
-            Element
-          </Link>
+          
         </div>
         <div className="header__user">
 

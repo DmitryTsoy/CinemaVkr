@@ -1,12 +1,8 @@
-// import { Home } from '@mui/icons-material';
-import React, { useEffect } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
-// import Button from '@mui/material/Button';
-// import { ImportExportTwoTone } from '@mui/icons-material';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header/Header'
-import { About } from './pages/About/About';
 import { Home } from './pages/Home/Home';
-import { Provider, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setMovieList, setMovieMain } from "./redux/actions/movieListActions"
 import MoviePage from './pages/Movie/MoviePage';
 import { RootState } from './redux/store/store';
@@ -19,6 +15,7 @@ import AuthWindow from './pages/Auth/AuthWindow';
 import { setHistory } from './redux/actions/historyActions';
 import HistoryPage from './pages/History/HistoryPage';
 import Footer from './components/Footer/Footer';
+import SessionsSoonPage from './pages/SessionsSoon/SessionsSoonPage';
 
 function App() {
 
@@ -47,6 +44,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/movie/:title' element={<MoviePage />} />
             <Route path='/sessions' element={<SessionsPage />} />
+            <Route path='/soon' element={<SessionsSoonPage />} />
+
             <Route path='/history' element={<HistoryPage />} />
 
             <Route path='*' element={<ErrorPage />} />
