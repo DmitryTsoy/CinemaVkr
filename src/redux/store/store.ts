@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { activeMovieSlice } from "../reducers/activeMovieSlice";
+import { historySlice } from "../reducers/historySlice";
 import movieListSlice from "../reducers/movieListSlice";
 import sessionListSlice from "../reducers/sessionListSlice";
 import sessionSlice from "../reducers/sessionSlice";
@@ -14,6 +15,8 @@ const reducers = {
   sessionList: sessionListSlice.reducer,
   session: sessionSlice.reducer,
   user: userSlice.reducer,
+  history: historySlice.reducer,
+
 };
 
 
