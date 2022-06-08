@@ -17,9 +17,6 @@ export default function HistoryList() {
                 < HistoryBlock
                     key={elem.filmName + elem.sessionTime}
                     block={elem} />))}
-
-
-
         </div>)
 }
 

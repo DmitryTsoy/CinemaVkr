@@ -35,7 +35,7 @@ export default function SessionsListElement(props: { element: movieDataTypeEleme
                 </div>
 
                 <div className="sessionsList__sessions">
-                    <p>Выбор сеанса</p>
+                    
                     <TimeList title={element.title} />
                 </div>
 
