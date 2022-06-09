@@ -13,9 +13,9 @@ export default function HistoryList() {
     return (
         <div className="historyList">
 
-            {history.map((elem) => (
+            {history.map((elem, index) => (
                 < HistoryBlock
-                    key={elem.filmName + elem.sessionTime}
+                    key={elem.filmName + elem.sessionTime + index}
                     block={elem} />))}
         </div>)
 }
