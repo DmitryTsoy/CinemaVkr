@@ -11,9 +11,20 @@ export const setHistory = createAsyncThunk(
 
 
     historytActions.SET_HISTORY,
-    async function () {
+    async function (email: { email: string }) {
+        //alert(email.email)
 
-        return Promise.resolve(historyData);
+        const req = await fetch(`http://localhost/Cinema/hs/v1/userHistory`,
+            {
+                method: 'POST',
+                body:
+                    JSON.stringify({
+                        "email": email.email,
+                    })
+            });
+        return req.json()
+
+        //return Promise.resolve(historyData);
 
     }
 

@@ -27,7 +27,7 @@ function App() {
     dispatch(setMovieList())
     dispatch(setMovieMain())
     dispatch(setSessionList())
-    dispatch(setHistory())
+    //dispatch(setHistory())
 
 
   }, [])

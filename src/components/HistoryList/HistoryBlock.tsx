@@ -28,7 +28,7 @@ export default function HistoryBlock(props: { block: THistoryElement }) {
 
                 {block.reservedPlaces.map((elem, index) => (
                     <HistoryElement
-                        key={block.filmName + index}
+                        key={block.filmName +elem.place+elem.row+block.nameHall +index}
                         block={block}
                         element={elem} />
                 ))}
